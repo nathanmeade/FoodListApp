@@ -25,6 +25,12 @@ class MainActivity : AppCompatActivity() {
         Food("Soup", R.drawable.soup)
     )
 
+    private val listener = OnClickListener {
+      if (){
+
+      }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -43,5 +49,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupFoodMenu() {
         //Write your logic here
+        foodListAdapter = FoodListAdapter(this, foodList, listener)
+        binding.food_list.adapter = foodListAdapter
+        binding.food_list.layoutManager = LinearLayoutManager()
+        binding.food_list.itemDecoration = decoration
     }
 }
