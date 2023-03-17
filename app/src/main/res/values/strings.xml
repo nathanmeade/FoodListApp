@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Hacker Shop</string>
+    <string name="add_to_cart_btn_text">ADD TO CART</string>
+    <string name="remove_from_cart_btn_text">REMOVE FROM CART</string>
+</resources>
