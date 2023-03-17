@@ -1,6 +1,8 @@
 package com.hackerrank.android
 
+import android.net.sip.SipSession.Listener
 import android.os.Bundle
+import android.view.View.OnClickListener
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 import com.hackerrank.android.adapters.FoodListAdapter
@@ -25,11 +27,11 @@ class MainActivity : AppCompatActivity() {
         Food("Soup", R.drawable.soup)
     )
 
-    private val listener = OnClickListener {
-      if (){
-
-      }
-    }
+//    private val listener = OnClickListener {
+//      if (){
+//
+//      }
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,11 +49,15 @@ class MainActivity : AppCompatActivity() {
         setupFoodMenu()
     }
 
+    fun listenerFunction() : (Int) -> Unit {
+        return {}
+    }
+
     private fun setupFoodMenu() {
         //Write your logic here
-        foodListAdapter = FoodListAdapter(this, foodList, listener)
-        binding.food_list.adapter = foodListAdapter
-        binding.food_list.layoutManager = LinearLayoutManager()
-        binding.food_list.itemDecoration = decoration
+        foodListAdapter = FoodListAdapter(this, foodList, listenerFunction())
+        binding.foodList.adapter = foodListAdapter
+        binding.foodList.layoutManager = LinearLayoutManager(this)
+        binding.foodList.addItemDecoration(decoration)
     }
 }

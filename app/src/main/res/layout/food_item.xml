@@ -5,7 +5,7 @@
     android:id="@+id/food_item_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="R.color.light_shade_green">
+    android:background="@color/light_shade_green">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/card_layout"
@@ -14,20 +14,26 @@
 
         <ImageView
             android:id="@+id/food_image"
-            android:layout_width="0dp"
-            android:layout_height="250dp" />
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <TextView
             android:id="@+id/food_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/food_image"
+            app:layout_constraintStart_toStartOf="@+id/food_image"/>
 
         <Button
             android:id="@+id/food_cart_button"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/food_name"
+            app:layout_constraintStart_toEndOf="@+id/food_name"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

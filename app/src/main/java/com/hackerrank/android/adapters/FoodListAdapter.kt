@@ -24,8 +24,13 @@ class FoodListAdapter(private val context: Context, private val foodList: ArrayL
         //Write binding logic here
         viewHolder.foodImage.setImageResource(foodList[position].imageResourceId)
         viewHolder.foodName.text = foodList[position].name
-        viewHolder.cartButton.text = if (foodList[position].inCart) R.string.remove_from_cart_btn_text else R.string.add_to_cart_btn_text
-        viewHolder.cartButton.setOnClickListener(listener)
+
+        if (foodList[position].inCart) {
+            viewHolder.cartButton.text = context.resources.getString(R.string.remove_from_cart_btn_text)
+        } else {
+            viewHolder.cartButton.text = context.resources.getString(R.string.add_to_cart_btn_text)
+        }
+        //viewHolder.cartButton.setOnClickListener(listener)
     }
 
     override fun getItemCount(): Int {
