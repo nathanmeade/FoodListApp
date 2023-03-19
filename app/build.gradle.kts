@@ -2,9 +2,9 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
-    id 'kotlin-kapt'
+    id "com.android.application"
+    id "kotlin-android"
+    id "kotlin-kapt"
 }
 
 android {
@@ -79,12 +79,12 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.3.1'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
-    implementation 'com.github.bumptech.glide:glide:4.15.0'
-    implementation 'io.coil-kt:coil:1.0.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.0'
+    implementation "androidx.appcompat:appcompat:1.3.1"
+    implementation "com.google.android.material:material:1.4.0"
+    implementation "androidx.constraintlayout:constraintlayout:2.0.1"
+    implementation "com.github.bumptech.glide:glide:4.15.0"
+    implementation "io.coil-kt:coil:1.0.0"
+    annotationProcessor "com.github.bumptech.glide:compiler:4.15.0"
     // Unit testing dependencies
     def kotlin_version = "1.3.2"
     def buildToolsVersion = "30.0.0"
@@ -96,18 +96,18 @@ dependencies {
     def extJUnitVersion = "1.1.4-alpha03"
     def runnerVersion = "1.4.1-alpha03"
     def espressoVersion = "3.5.0-alpha03"
-    androidTestImplementation 'androidx.test:core:' + coreVersion
-    androidTestImplementation 'androidx.test:core-ktx:' + coreVersion
-    androidTestImplementation 'androidx.test.ext:junit:' + extJUnitVersion
-    androidTestImplementation 'androidx.test.ext:junit-ktx:' + extJUnitVersion
-    androidTestImplementation 'androidx.test:runner:' + runnerVersion
+    androidTestImplementation "androidx.test:core:" + coreVersion
+    androidTestImplementation "androidx.test:core-ktx:" + coreVersion
+    androidTestImplementation "androidx.test.ext:junit:" + extJUnitVersion
+    androidTestImplementation "androidx.test.ext:junit-ktx:" + extJUnitVersion
+    androidTestImplementation "androidx.test:runner:" + runnerVersion
 
-    testImplementation 'androidx.test:core:' + coreVersion;
-    testImplementation 'androidx.test.ext:junit:' + extJUnitVersion
-    testImplementation 'junit:junit:4.12'
-    testImplementation 'org.robolectric:robolectric:' + robolectricVersion
-    testImplementation 'androidx.test.espresso:espresso-core:' + espressoVersion
-    testImplementation 'androidx.test.ext:truth:' + extTruthVersion
-    testImplementation 'androidx.test.espresso:espresso-contrib:3.4.0'
+    testImplementation "androidx.test:core:" + coreVersion;
+    testImplementation "androidx.test.ext:junit:" + extJUnitVersion
+    testImplementation "junit:junit:4.12"
+    testImplementation "org.robolectric:robolectric:" + robolectricVersion
+    testImplementation "androidx.test.espresso:espresso-core:" + espressoVersion
+    testImplementation "androidx.test.ext:truth:" + extTruthVersion
+    testImplementation "androidx.test.espresso:espresso-contrib:3.4.0"
     testImplementation "com.google.truth:truth:1.1.3"
 }
