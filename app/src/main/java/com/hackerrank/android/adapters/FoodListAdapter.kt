@@ -58,6 +58,9 @@ class FoodListAdapter(
         fun bind(food: Food) {
             binding.food = food
             binding.listener = listener
+            val string = "aogho"
+            string.length
+            val repeatString = string.repeat(5)
 //            cartButton.setOnClickListener(listener)
 
 //            cartButton.setOnClickListener { binding.food.inCart = !binding.food.inCart }
