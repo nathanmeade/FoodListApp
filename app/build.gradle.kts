@@ -78,13 +78,17 @@ android {
 //        }
 //    }
 }
-
+//val coreVersionFromProjectBuildGradle : String by rootProject.extra
 dependencies {
     implementation("androidx.appcompat:appcompat:1.3.1")
     implementation("com.google.android.material:material:1.4.0")
     implementation("androidx.constraintlayout:constraintlayout:2.0.1")
     implementation("com.github.bumptech.glide:glide:4.15.0")
-    implementation("io.coil-kt:coil:1.0.0")
+//    implementation("io.coil-kt:coil:" + ext.properties["coilVersion"])
+    val coreVersionFromProjectBuildGradle = (rootProject.properties["coreVersion"] ?: "default value").toString()
+
+    println("nathanTestBuildGradlePrintLn" + coreVersionFromProjectBuildGradle)
+    implementation("io.coil-kt:coil:" + coreVersionFromProjectBuildGradle)
     annotationProcessor("com.github.bumptech.glide:compiler:4.15.0")
     // Unit testing dependencies
     val kotlin_version = "1.3.2"
@@ -97,8 +101,8 @@ dependencies {
     val extJUnitVersion = "1.1.4-alpha03"
     val runnerVersion = "1.4.1-alpha03"
     val espressoVersion = "3.5.0-alpha03"
-    androidTestImplementation("androidx.test:core:" + coreVersion)
-    androidTestImplementation("androidx.test:core-ktx:" + coreVersion)
+    androidTestImplementation("androidx.test:core:" + ext.properties["coreVersion"])
+    androidTestImplementation("androidx.test:core-ktx:" + ext.properties[0])
     androidTestImplementation("androidx.test.ext:junit:" + extJUnitVersion)
     androidTestImplementation("androidx.test.ext:junit-ktx:" + extJUnitVersion)
     androidTestImplementation("androidx.test:runner:" + runnerVersion)
